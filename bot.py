@@ -54,6 +54,22 @@ async def on_ready():
     await client.change_presence(activity=discord.Game(name="iHelp"))
     print("We have logged in as {0.user}".format(client))
 
+@client.command(name='google')
+async def google_search(ctx, *, query):
+    try:
+        results = list(search(query, num=3, stop=3, pause=2))
+        if results:
+            response = f"Here are the top 3 Google search results for '{query}':\n"
+            for i, url in enumerate(results):
+                response += f"{i+1}. {url}\n"
+            await ctx.send(response)
+        else:
+            await ctx.send(f"Sorry, I couldn't find any results for '{query}'.")
+
+    except Exception:
+        await ctx.send("An error occurred while performing the search.")
+
+
 @client.command()
 async def Message(ctx,member:discord.Member):
     await ctx.send('What do you want to say?')
