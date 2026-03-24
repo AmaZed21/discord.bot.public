@@ -1,4 +1,4 @@
-#Discord Bot (Scyther)
+# Discord Bot (Scyther)
 
 iBot is a multifunctional Discord bot built with Python and `discord.py`. It includes entertainment commands, moderation tools, direct messaging utilities, Google search support, role management, inspirational quotes, and an interactive Tic-Tac-Toe game between server members.
 
